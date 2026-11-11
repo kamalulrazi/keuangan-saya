@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Keuangan Saya</title><meta name="theme-color" content="#2f5fe0"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Keuangan Saya</title><meta name="theme-color" content="#2f5fe0"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Keuangan"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#eef1f6;--c:#fff;--t:#111a2e;--m:#667089;--l:#dfe4ee;--ac:#2f5fe0;--in:#14935a;--out:#e0463c;box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);color-scheme:light}
@@ -165,4 +165,4 @@ if(!cfg.apiKey||/ISI|GANTI/.test(cfg.apiKey)){
   uid=u.uid;email=u.email||'';B.classList.add('auth');setSY('⏳ Menghubungkan…');
   P().innerHTML='<p class="mut" style="padding:24px 0">Memuat data…</p>';listen()});
 }
-</script></body></html>
+</script><script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script></body></html>
