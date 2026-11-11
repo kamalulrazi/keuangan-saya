@@ -1,6 +1,6 @@
 // Service worker sederhana: menyimpan file aplikasi agar bisa dibuka cepat/offline.
 // Data keuangan tetap diurus Firebase (bukan di sini).
-const CACHE = 'keuangan-saya-v1';
+const CACHE = 'keuangan-saya'; // tidak perlu dinaikkan: file selalu diambil terbaru dari internet
 const FILES = ['./', './index.html', './firebase-config.js', './manifest.json',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
@@ -21,9 +21,9 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return; // Firebase & Google Fonts tidak disentuh
-  // Network-first: selalu ambil versi terbaru, pakai cache kalau offline
+  // Network-first: selalu ambil versi terbaru (cek ulang ke server), pakai cache hanya kalau offline
   e.respondWith(
-    fetch(req).then(res => {
+    fetch(req.url, { cache: 'no-cache' }).then(res => {
       const copy = res.clone();
       caches.open(CACHE).then(c => c.put(req, copy));
       return res;
